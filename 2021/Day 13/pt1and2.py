@@ -13,7 +13,7 @@ for ax, fold_point in folds:
     paper, _, to_fold = np.split(paper, [fold_point, fold_point + 1], axis=ax)
     flipped = np.flip(to_fold, axis=ax)
     slices = [slice(None)] * 2
-    slices[ax] = slice(paper.shape[ax]-flipped.shape[ax], None)
+    slices[ax] = slice(paper.shape[ax] - flipped.shape[ax], None)
     paper[tuple(slices)] |= flipped
     # break  # part one
 
